@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面试题目整理</title>
+</head>
+<body>
+    <h2>html5语义化</h2>
+    <p>用合理的，正确的标签来展示内容比如说h1-h6来展示标题 用section来展示某一块内容</p>
+    <p>易于用户号阅读</p>
+    <p>有利于seo 搜索引擎根据标签来确定上下文各个关键字的权重</p>
+    <p>方便其他设备解析，网页渲染</p>
+    <p>有利于开发和维护，语义化更具有可读性</p>
+    <h2>什么是渐进式渲染</h2>
+    <p>
+        优先加载主要内容骨架
+        例如:图片懒加载、
+        确定显示内容的优先级 在页面刚载入的时候内容以及少量的css及脚本 然后根据onready监听load事件加载其他的资源和内容
+        异步加载html片段
+    </p>
+    <h2>viewport</h2>
+    <p>
+        viewport意思喂视图窗口 主要用于移动端 
+        移动端浏览器 一个可见视口就是设备的大小
+        还有一个视窗窗口能够展示多少个像素
+    </p>
+    <h2>viewport属性值</h2>
+    <p>
+        width: 或者字符 "device-width"
+        initial-scale:设置页面的初始缩放值是一个数字可以带小数点
+        minimum-scale：允许用户最小的缩放值
+        maximun-scale:允许用户最大的缩放值
+        user-scalable：表示是否允许用户缩放
+    </p>
+
+    <h2>回流与重绘</h2>
+    <p>
+        当涉及到dom及诶点的布局属性发生变化是就会重新计算该属性 浏览器会重新描相应的元素
+    </p>
+    <p>
+      当影响dom元素的可见性的属性发生变化时候比如color 浏览器会重新描绘响应的元素 叫到重绘
+    </p>
+    <p>
+        <ul>
+            <li>调整窗口的大小</li>
+            <li>字体大小</li>
+            <li>
+                样式表变动
+            </li>
+            <li>
+                元素内容变化 尤其是输入控件
+            </li>
+            <li>
+                css伪类激活，在用户交互过程中发生
+            </li>
+            <li>
+                Dom操作，dom元素的增删改查
+            </li>
+            <li>
+                width clientWidth,scrollTop等布局宽高的计算
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        <ul>
+            <li>避免逐条更改样式,使用class</li>
+            <li>避免繁琐的对dom操作</li>
+            <li>
+                避免频繁读取元素的几何属性 入scrollTop 绝对定位具有复杂动画的元素
+            </li>
+            <li>
+                使用绝对定位使得他脱离文档流 避免引起父元素及后续元素的大量回流
+            </li>
+        </ul>
+    </p>
+
+    <h2>img中的alt和元素的title的属性作用</h2>
+    <p>
+        alt当图片无法展示的时候会显示alt里面的内容
+        title 当鼠标移动到元素上时候会显示title的内容
+    </p>
+
+    <h2>href和src的区别</h2>
+    <p>
+        href标识抄文本引用，用在link 和a标签上 href的引用和页面关联
+    </p>
+    <p>
+        若在文档中添加link浏览器会识别该文档为查宿舍、文件并且会并行下载资源不会停止对当前文档的处理
+    </p>
+    <p>
+        src 表示引用资源 在img iframe 和script上表示是页面不可缺少的一部分在会等待src导入完成之后在执行下一步
+    </p>
+
+    <h2>如何关闭form的自动完成功能</h2>
+    <p>form 或者input的autocomplete= off</p>
+    <h2>重置样式和标准化css的区别</h2>
+    <p>
+        重置样式:意味着除去所有浏览器的默认样式，对于页面所有的元素像margin padding font-size 这些样式全部设置成一直
+    </p>
+    <p>
+        标准化样式：标准化没有去掉所有的默认样式 而是保留了有用的一部分同事还纠正一些常见的错误
+    </p>
+    <h2>bfc</h2>
+    <p>
+        块格式上下文是web页面的可视化css渲染的部分是块级盒子布局发生的区域也是浮动元素与其他元素交互的区域
+        <p>
+            float不是none
+            position值不是static 和realative
+            display：的值是table-cell flex inlin-flex
+            overflow的值不是visible
+        </p>
+    </p>
+    <h2>css预处理和后处理</h2>
+    <p>
+        css预处理主要有 less scss stylus 
+        <p>
+            提高css的可维护性
+            易于编写嵌套的选择器
+            引入变量增加主题功能 
+
+        </p>
+        <p>
+            缺点：需要编译工具处理 重新编译css需要时间
+        </p>
+    </p>
+
+    <p>
+        css后处理主要有Autoprefixer 和postcss
+        <p>
+            优点：使用css语法容易进行模块化
+        </p>
+    </p>
+    <h2>
+        超出文本使用省略号显示
+    </h2>
+    <p>
+        <h3>单行</h3>
+        <p>
+            overflow:hidden;
+        </p>
+    </p>
+</body>
+</html>
